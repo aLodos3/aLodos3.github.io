@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Portfolio</title>
+  </head>
+  <body class="dark">
+    <header class="header">
+      <div class="switches">
+        <div id="toggle-theme" class="toggle-theme">
+          <img id="toggle-icon" src="assets/icons/moon.svg" alt="icon theme" class="toggle-theme__icon">
+          <p id="toggle-text" class="toggle-theme__text">Dark Mode</p>
+        </div>
+      </div>
+      <div id="toggle-colors" class="colors">
+        <div data-color="hsl(214,84%,56%)" class="colors__item colors__item--blue"></div>        
+        <div data-color="hsl(150,84%,56%)" class="colors__item colors__item--green"></div>        
+        <div data-color="hsl(276,84%,56%)" class="colors__item colors__item--purple"></div>        
+        <div data-color="hsl(46,84%,56%)" class="colors__item colors__item--orange"></div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="column column--left">
+        <!--Profile card-->
+        <article class="card card--profile">
+          <div class="card__image-container">
+            <img src="/assets/images/yofoto.jpg" alt="">
+          </div>
+          <div class="card__header">
+            <h2 class="card__title">Adrian Lodos Trinidad</h2>
+            <p class="card__subtitle">FullStack Developer</p>
+          </div>
+          <div class="card__body">
+            <div class="card__link">
+              <i class="fas fa-envelope icon"></i>
+              <a href="mailto:lodostrinidad@gmail.com">lodostrinidad@gmail.com</a>
+            </div>
+            <div class="card__link">
+              <i class="fas fa-phone-alt icon"></i>
+              <a href="tel:689157782">+34 689 157 782</a>
+            </div>
+            <p class="card__text">
+              <p class="card__text">
+                Soy un desarrollador web en formación, con dos años de experiencia estudiando 
+                en un Grado Superior de Desarrollo de Aplicaciones Web. Durante este tiempo, 
+                he profundizado en tecnologías como HTML, CSS, JavaScript, y frameworks modernos. <br>
+                Apasionado por las nuevas tecnologías y siempre en busca de aprender más, me encanta 
+                explorar las últimas tendencias en desarrollo web, desde interfaces modernas hasta 
+                buenas prácticas en programación. Además de mis estudios, disfruto experimentando 
+                con proyectos personales que me permiten mejorar mis habilidades cada día.
+              </p>             
+            </p>
+          </div>
+        </article>
+        <article class="card card--experience">
+          <h2 class="card__title">Experiencias</h2>
+          <div class="experience">
+            <img src="assets/images/A2.png" alt="" class="experience__image">
+            <div class="experience__info">
+              <p class="experience__time">
+                Febrero 2017 - Current
+              </p>
+              <h3 class="experience__job">FullStack Developer</h3>
+              <p class="experience__description">
+                En prácticas.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience">
+            <img src="assets/images/A2.png" alt="" class="experience__image">
+            <div class="experience__info">
+              <p class="experience__time">
+                Febrero 2017 - Current
+              </p>
+              <h3 class="experience__job">Front End Developer</h3>
+              <p class="experience__description">
+                En prácticas.
+              </p>
+            </div>
+          </div>
+
+          <div class="experience">
+            <img src="assets/images/A2.png" alt="" class="experience__image">
+            <div class="experience__info">
+              <p class="experience__time">
+                Febrero 2017 - Current
+              </p>
+              <h3 class="experience__job">Back End Developer</h3>
+              <p class="experience__description">
+                En prácticas.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--hobies">
+          <h2 class="card__title">Hobbies</h2>
+          <div class="card__image-container">
+            <img src="assets/images/hobbie.jpg" alt="Man on bike">
+          </div>
+          <h3 class="hobbie__title">Technologies</h3>
+          <p class="card__text">
+            En mi tiempo libre, siempre estoy explorando nuevas herramientas y tendencias que 
+            me ayuden a seguir mejorando como desarrollador.
+          </p><br>
+          <h3 class="hobbie__title">Motor</h3>
+          <p class="card__text">
+            Apasionado de los vehiculos, y todo el mundo al que envuelven.
+          </p><br>
+          <h3 class="hobbie__title">Sports</h3>
+          <p class="card__text">
+            Me encanta el deporte, llevo un tiempo fuera por culpa de alguna lesión, pero estoy
+            muy feliz de haber podido regresar hace un par de meses.
+          </p>
+        </article>
+
+      </section>
+      <section class="column column--right">
+        <article class="card">
+          <h2 class="card__title">Front End</h2>
+          <small>Experiencia</small>
+          <div class="skills">
+          <div class="skills__header">
+            <span class="skills__start-level">0</span>
+            <span class="skills__start-level">2</span>
+          </div>
+            <div class="skills__item">
+              <p class="skills__tech">HTML</p>
+              <div class="skills__bar skills__bar--80"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">CSS</p>
+              <div class="skills__bar skills__bar--70"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">JavaScipt</p>
+              <div class="skills__bar skills__bar--60"></div>
+            </div>
+          </div>
+        </article>
+         
+        <article class="card">
+          <h2 class="card__title">Back End</h2>
+          <div class="skills">
+            <div class="skills__item">
+              <p class="skills__tech">PHP</p>
+              <div class="skills__bar skills__bar--60"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">JAVA</p>
+              <div class="skills__bar skills__bar--90"></div>
+            </div>
+          </div>
+        </article>  
+
+        <article class="card">
+          <h2 class="card__title">Design</h2>
+          <div class="skills">
+            <div class="skills__item">
+              <p class="skills__tech">PhotoShop</p>
+              <div class="skills__bar skills__bar--50"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">MarvelApp</p>
+              <div class="skills__bar skills__bar--40"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Canva</p>
+              <div class="skills__bar skills__bar--90"></div>
+            </div>
+        </article>
+        <article class="card card--project">
+          <div class="card__image-container">
+            <img src="assets/images/project.jpg" alt="Landing Page" class="card__image">
+          </div>
+          <div class="project">
+            <div class="project__tags">
+              <span class="project__tag">#HTML</span>
+              <span class="project__tag">#CSS</span>
+              <span class="project__tag">#JavaScript</span>
+              <span class="project__tag">#Responsive</span>
+            </div>
+            <h2 class="card__title">Landing Page</h2>
+            <p class="card__text">
+              Soy un estudiante en el Grado Superior de Desarrollo de Aplicaciones Web con 
+              dos años de formación en tecnologías front-end y back-end. Me apasionan las 
+              nuevas tecnologías, y disfruto creando soluciones innovadoras a través del código. 
+            </p>
+            <p class="card__text">
+              Proyectos Futuros.
+            </p>
+            <div class="buttons">
+              <a href="#" class="button button--primary">Demo</a>
+              <a href="#" class="button button--ghost">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--project">
+          <div class="card__image-container">
+            <img src="assets/images/project.jpg" alt="Landing Page" class="card__image">
+          </div>
+          <div class="project">
+            <div class="project__tags">
+              <span class="project__tag">#HTML</span>
+              <span class="project__tag">#CSS</span>
+              <span class="project__tag">#JavaScript</span>
+              <span class="project__tag">#Responsive</span>
+            </div>
+            <h2 class="card__title">Landing Page</h2>
+            <p class="card__text">
+              Soy un estudiante en el Grado Superior de Desarrollo de Aplicaciones Web con 
+              dos años de formación en tecnologías front-end y back-end. Me apasionan las 
+              nuevas tecnologías, y disfruto creando soluciones innovadoras a través del código.
+            </p>
+            <p class="card__text">
+              Proyectos Futuros.
+            </p>
+            <div class="buttons">
+              <a href="#" class="button button--primary">Demo</a>
+              <a href="#" class="button button--ghost">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--project">
+          <div class="card__image-container">
+            <img src="assets/images/project.jpg" alt="Landing Page" class="card__image">
+          </div>
+          <div class="project">
+            <div class="project__tags">
+              <span class="project__tag">#HTML</span>
+              <span class="project__tag">#CSS</span>
+              <span class="project__tag">#JavaScript</span>
+              <span class="project__tag">#Responsive</span>
+            </div>
+            <h2 class="card__title">Landing Page</h2>
+            <p class="card__text">
+              Soy un estudiante en el Grado Superior de Desarrollo de Aplicaciones Web con 
+              dos años de formación en tecnologías front-end y back-end. Me apasionan las 
+              nuevas tecnologías, y disfruto creando soluciones innovadoras a través del código.
+            </p>
+            <p class="card__text">
+              Proyectos Futuros.
+            </p>
+            <div class="buttons">
+              <a href="#" class="button button--primary">Demo</a>
+              <a href="#" class="button button--ghost">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="card__title">Currículum</h2>
+          <div class="card__body">
+            <a href="assets/images/curriculum.png" download>
+              <img src="assets/images/curriculum.png" alt="Currículum de Adrian Lodos Trinidad" class="curriculum-img">
+            </a>
+            <p>Haz clic en la imagen para descargar el currículum.</p>
+          </div>
+        </article>
+        
+      </section>
+    </main>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

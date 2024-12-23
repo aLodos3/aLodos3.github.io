@@ -1,920 +1,464 @@
-<html><head><base href="/" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adrián Lodos Trinidad - Full Stack Developer</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<style>
-:root {
-    --primary-color: #2d3436;
-    --secondary-color: #0984e3;
-    --accent-color: #00cec9;
-    --gradient-1: linear-gradient(135deg, #00cec9, #0984e3, #6c5ce7);
-    --gradient-2: linear-gradient(45deg, #00cec9, #0984e3);
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, var(--primary-color), #2c3e50);
-    color: white;
-}
-
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    background: linear-gradient(135deg, var(--primary-color), #2c3e50);
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-#particles-js:hover {
-    opacity: 0.9;
-}
-
-.section {
-    padding: 120px 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
-    margin: 20px 0;
-    padding-top: 140px; /* Added extra top padding for sections */
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 120px; /* Increased from 80px to 120px */
-}
-
-.hero-content {
-    text-align: center;
-    padding: 3rem 2rem; /* Increased top/bottom padding from 2rem to 3rem */
-    max-width: 1200px;
-}
-
-.hero-content h1 {
-    font-size: 4.8rem;
-    font-weight: 700;
-    background: var(--gradient-1);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 12s ease infinite;
-    text-shadow: 0 0 30px rgba(0, 206, 201, 0.3);
-}
-
-@keyframes gradient-shift {
-    0% { background-position: 0% 50% }
-    25% { background-position: 100% 50% }
-    50% { background-position: 50% 100% }
-    75% { background-position: 0% 50% }
-    100% { background-position: 0% 50% }
-}
-
-.hero-content h2 {
-    font-size: 2.2rem;
-    color: var(--accent-color);
-    text-shadow: 0 0 15px rgba(0, 206, 201, 0.4);
-}
-
-.about-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-text {
-    margin-bottom: 2rem;
-}
-
-.about-text p {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-}
-
-.certificates-slider {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 3rem;
-    margin: 2rem auto;
-    max-width: 1200px;
-}
-
-.certificate-card {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 15px;
-    padding: 2.5rem;
-    margin: 0 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.certificate-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.12);
-    border-color: var(--accent-color);
-}
-
-.skill-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.skill-bar {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 8px;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-    border-radius: 4px;
-    transition: width 1s ease-in-out;
-}
-
-.contact-form-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.form-control {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    color: white;
-    padding: 12px 20px;
-    transition: all 0.3s ease;
-}
-
-.form-control:focus {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: var(--accent-color);
-    box-shadow: 0 0 15px rgba(0, 206, 201, 0.3);
-}
-
-.footer {
-    padding: 80px 0 30px;
-}
-
-.footer .row > div {
-    padding: 0 25px;
-    margin-bottom: 40px;
-}
-
-.footer ul li {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.footer ul li a,
-.footer .contact-info li {
-    justify-content: flex-start;
-}
-
-.view-cert, 
-.view-all-certs, 
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    border: none;
-    border-radius: 25px;
-    padding: 12px 30px;
-    color: white;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.view-cert:hover, 
-.view-all-certs:hover, 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 206, 201, 0.4);
-    color: white;
-}
-
-/* Enhanced About section button styling */
-.download-cv {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    color: white;
-    padding: 15px 35px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 2rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.download-cv:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 206, 201, 0.4);
-    color: white;
-}
-
-.download-cv i {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.download-cv:hover i {
-    transform: translateY(-2px);
-}
-
-.about-cta {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-/* Enhanced modal styles */
-.modal-content {
-    background: linear-gradient(135deg, var(--primary-color), #2c3e50);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-}
-
-.modal-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-}
-
-.modal-title {
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.modal-body {
-    padding: 2rem;
-    color: white;
-}
-
-.btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%);
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.btn-close:hover {
-    opacity: 1;
-}
-
-.cert-modal-card {
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.cert-modal-card:hover {
-    transform: translateY(-5px) !important;
-}
-
-@media (max-width: 768px) {
-    .section {
-        padding: 100px 0;
-        padding-top: 120px; /* Adjusted for mobile */
-    }
-    
-    .hero {
-        padding-top: 100px; /* Slightly reduced for mobile but still maintaining space */
-    }
-    
-    .about-container,
-    .certificates-slider,
-    .skill-container,
-    .contact-form-container {
-        padding: 2rem;
-    }
-    
-    .footer .row > div {
-        text-align: center;
-    }
-    
-    .footer ul li a,
-    .footer .contact-info li {
-        justify-content: center;
-    }
-    
-    .certificate-card {
-        margin: 0 auto;
-        max-width: 320px;
-    }
-}
-
-/* Additional styles */
-.hero::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-    animation: rotate 20s linear infinite;
-    opacity: 0.1;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.navbar {
-    background: rgba(45, 52, 54, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.navbar.scrolled {
-    padding: 0.8rem 0;
-    background: rgba(45, 52, 54, 0.98);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--accent-color) !important;
-    position: relative;
-    padding: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.navbar-brand img {
-    transition: transform 0.5s ease;
-    filter: drop-shadow(0 0 8px rgba(0, 206, 201, 0.5));
-    border-radius: 50%; /* Make logo circular */
-    background: rgba(255, 255, 255, 0.05);
-    padding: 5px;
-    box-shadow: 0 0 15px rgba(0, 206, 201, 0.3);
-}
-
-.navbar-brand:hover img {
-    transform: rotate(360deg) scale(1.1);
-    filter: drop-shadow(0 0 12px rgba(0, 206, 201, 0.8));
-}
-
-.navbar-brand span {
-    background: linear-gradient(120deg, var(--accent-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-}
-
-.navbar-brand::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.navbar-brand:hover::after {
-    width: 80%;
-}
-
-.nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-weight: 500;
-    padding: 0.8rem 1.2rem !important;
-    margin: 0 0.3rem;
-    position: relative;
-    transition: all 0.3s ease;
-    border-radius: 25px;
-    overflow: hidden;
-}
-
-.nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-.nav-link:hover {
-    color: white !important;
-    transform: translateY(-2px);
-}
-
-.nav-link:hover::before {
-    opacity: 0.2;
-}
-
-.nav-link.active {
-    color: var(--accent-color) !important;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-toggler {
-    padding: 0.5rem;
-    border: none;
-    background: transparent;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.navbar-toggler-icon {
-    background-image: none;
-    position: relative;
-    width: 24px;
-    height: 2px;
-    background: var(--accent-color);
-    transition: all 0.3s ease;
-    margin: 0 auto;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background: var(--accent-color);
-    left: 0;
-    transition: all 0.3s ease;
-}
-
-.navbar-toggler-icon::before {
-    top: -8px;
-}
-
-.navbar-toggler-icon::after {
-    bottom: -8px;
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background: transparent;
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    top: 0;
-    transform: rotate(45deg);
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    bottom: 0;
-    transform: rotate(-45deg);
-}
-
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-top: 2rem; /* Added margin-top */
-    margin-bottom: 2rem;
-    border: 3px solid var(--accent-color);
-    box-shadow: 0 0 30px rgba(0, 206, 201, 0.4);
-    transition: all 0.3s ease;
-    object-fit: cover;
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(0, 206, 201, 0.6);
-}
-
-.footer {
-    background: linear-gradient(135deg, var(--primary-color), #2c3e50);
-    padding: 80px 0 30px;
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(0, 206, 201, 0.05),
-        rgba(9, 132, 227, 0.05));
-    z-index: -1;
-    animation: gradientFlow 15s ease infinite;
-}
-
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.footer h4 {
-    align-self: flex-start;
-    color: var(--accent-color);
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-    position: relative;
-    padding-bottom: 0.8rem;
-    text-shadow: 0 0 15px rgba(0, 206, 201, 0.3);
-}
-
-.footer h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-    border-radius: 3px;
-    box-shadow: 0 0 10px rgba(0, 206, 201, 0.4);
-}
-
-.footer ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.2rem;
-}
-
-.footer ul li a,
-.footer .contact-info li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 8px 0;
-}
-
-.footer ul li a i,
-.footer .contact-info li i {
-    width: 20px;
-    text-align: center;
-    color: var(--accent-color);
-}
-
-.footer .social-icons {
-    display: flex;
-    gap: 1.2rem;
-    margin-top: 2rem;
-}
-
-.footer .social-icons a {
-    color: white;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.footer .social-icons a:hover {
-    transform: translateY(-5px) rotate(360deg);
-    box-shadow: 0 8px 20px rgba(0, 206, 201, 0.4);
-}
-
-.footer .copyright {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Enhanced certificate styles */
-.certificates-slider {
-    margin: 0 auto;
-    padding: 3rem 0;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.certificates-track {
-    display: flex;
-    gap: 30px;
-    transition: transform 0.5s ease;
-}
-
-.certificate-card {
-    flex: 0 0 calc(33.333% - 20px);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2.5rem;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
-}
-
-.certificate-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 206, 201, 0.3);
-    border-color: var(--accent-color);
-}
-
-.certificate-card i {
-    font-size: 3rem;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.certificate-card h3 {
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.certificate-card p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.view-cert {
-    padding: 12px 25px;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    border: none;
-    border-radius: 25px;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.view-cert:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 206, 201, 0.4);
-}
-
-.slider-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-}
-
-.slider-btn {
-    padding: 12px 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    color: white;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    font-weight: 500;
-    backdrop-filter: blur(5px);
-}
-
-.slider-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    border-color: var(--accent-color);
-    box-shadow: 0 5px 15px rgba(0, 206, 201, 0.3);
-}
-
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 2rem;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    background: var(--accent-color);
-    transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(0, 206, 201, 0.5);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .certificates-track {
-        flex-wrap: nowrap;
-    }
-    
-    .certificate-card {
-        flex: 0 0 100%;
-        margin: 0;
-    }
-    
-    .slider-nav {
-        flex-direction: row;
-        gap: 1rem;
-    }
-    
-    .slider-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .section {
-        padding: 100px 0;
-        padding-top: 120px; /* Adjusted for mobile */
-    }
-    
-    .about-container,
-    .certificates-slider,
-    .skill-container,
-    .contact-form-container {
-        padding: 2rem;
-    }
-    
-    .footer .row > div {
-        text-align: center;
-    }
-    
-    .footer ul li a,
-    .footer .contact-info li {
-        justify-content: center;
-    }
-    
-    .certificate-card {
-        margin: 0 auto;
-        max-width: 320px;
-    }
-}
-
-/* Enhanced button styles */
-.view-all-certs {
-    margin-top: 3rem;
-    padding: 15px 35px;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.view-all-certs:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 206, 201, 0.4);
-}
-
-/* Certificate modal styles */
-.cert-modal-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.cert-modal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 206, 201, 0.2);
-    border-color: var(--accent-color);
-}
-
-.cert-img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px rgba(0, 206, 201, 0.3));
-}
-
-.cert-details {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
-}
-
-.cert-details span {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-.cert-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin: 1.5rem 0;
-}
-
-.skill-tag {
-    padding: 6px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    font-size: 0.9rem;
-    color: var(--accent-color);
-}
-
-.cert-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
-}
-
-.cert-link:hover {
-    color: white;
-    text-shadow: 0 0 10px rgba(0, 206, 201, 0.5);
-}
-</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrián Lodos Trinidad - Full Stack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://adrianlodos.com">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/beast-ball.png" alt="ALT Logo" width="40" height="40">
+                <span>ALT</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" data-section="home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-section="about">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates" data-section="certificates">Certificados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" data-section="skills">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-section="contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="particles-js"></div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="https://avatars.githubusercontent.com/u/38017835?v=4" alt="Adrián Lodos Trinidad" class="profile-img">
+            <h1 class="display-4">Adrián Lodos Trinidad</h1>
+            <h2 class="h3 mb-4"><span id="typed-text"></span></h2>
+            <div class="social-icons">
+                <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourusername"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Sobre mí</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p class="lead">Soy un desarrollador Full Stack Junior apasionado por crear soluciones web innovadoras y funcionales. Mi objetivo es combinar creatividad y tecnología para desarrollar experiencias digitales excepcionales.</p>
+                    <p>Con experiencia en tecnologías modernas como React, Node.js y MongoDB, busco constantemente aprender y crecer en el mundo del desarrollo web. Me especializo en crear aplicaciones web escalables y mantenibles, siempre siguiendo las mejores prácticas y patrones de diseño actuales.</p>
+                    <p>Mi enfoque se centra en la calidad del código, la experiencia del usuario y el rendimiento de las aplicaciones. Disfruto trabajando en equipo y contribuyendo con soluciones creativas a los desafíos técnicos.</p>
+                </div>
+                <div class="about-cta">
+                    <a href="path/to/your/cv.pdf" class="download-cv" download>
+                        <i class="fas fa-download"></i>
+                        <span>Descargar CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Certificados</h2>
+            <div class="certificates-slider">
+                <div class="certificates-track">
+                    <div class="certificate-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Full Stack Development</h3>
+                        <p>Bootcamp intensivo de desarrollo web full stack con las últimas tecnologías y mejores prácticas.</p>
+                        <button class="view-cert" data-bs-toggle="modal" data-bs-target="#cert1Modal">Ver Certificado</button>
+                    </div>
+                    <div class="certificate-card">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript Advanced</h3>
+                        <p>Curso avanzado de JavaScript incluyendo ES6+, patrones de diseño y mejores prácticas.</p>
+                        <button class="view-cert" data-bs-toggle="modal" data-bs-target="#cert2Modal">Ver Certificado</button>
+                    </div>
+                    <div class="certificate-card">
+                        <i class="fab fa-react"></i>
+                        <h3>React Specialist</h3>
+                        <p>Especialización en React.js, Redux, y desarrollo de aplicaciones modernas.</p>
+                        <button class="view-cert" data-bs-toggle="modal" data-bs-target="#cert3Modal">Ver Certificado</button>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-btn prev-btn">Anterior</button>
+                    <button class="slider-btn next-btn">Siguiente</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="view-all-certs" data-bs-toggle="modal" data-bs-target="#allCertsModal">
+                    Ver todos los certificados
+                    <i class="fas fa-external-link-alt ms-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="allCertsModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Todos mis certificados</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="cert-modal-card" style="opacity: 0; transform: translateY(20px); transition: all 0.3s ease;">
+                                <img src="https://www.svgrepo.com/show/416635/award-certificate-certification.svg" alt="Certificate" class="cert-img">
+                                <h4>Full Stack Development</h4>
+                                <p>Bootcamp intensivo de desarrollo web full stack</p>
+                                <div class="cert-details">
+                                    <span class="cert-date"><i class="far fa-calendar-alt"></i> 2023</span>
+                                    <span class="cert-issuer"><i class="fas fa-university"></i> Digital Academy</span>
+                                    <span class="cert-duration"><i class="far fa-clock"></i> 800 horas</span>
+                                </div>
+                                <div class="cert-skills">
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                </div>
+                                <a href="#" class="cert-link">Ver credencial <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="cert-modal-card" style="opacity: 0; transform: translateY(20px); transition: all 0.3s ease;">
+                                <img src="https://www.svgrepo.com/show/416636/award-certificate-certification.svg" alt="Certificate" class="cert-img">
+                                <h4>JavaScript Advanced</h4>
+                                <p>Curso avanzado de JavaScript ES6+</p>
+                                <div class="cert-details">
+                                    <span class="cert-date"><i class="far fa-calendar-alt"></i> 2023</span>
+                                    <span class="cert-issuer"><i class="fas fa-university"></i> Code Academy</span>
+                                    <span class="cert-duration"><i class="far fa-clock"></i> 300 horas</span>
+                                </div>
+                                <div class="cert-skills">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">ES6</span>
+                                    <span class="skill-tag">Node.js</span>
+                                </div>
+                                <a href="#" class="cert-link">Ver credencial <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="cert-modal-card" style="opacity: 0; transform: translateY(20px); transition: all 0.3s ease;">
+                                <img src="https://www.svgrepo.com/show/416637/award-certificate-certification.svg" alt="Certificate" class="cert-img">
+                                <h4>React Specialist</h4>
+                                <p>Especialización en React.js</p>
+                                <div class="cert-details">
+                                    <span class="cert-date"><i class="far fa-calendar-alt"></i> 2023</span>
+                                    <span class="cert-issuer"><i class="fas fa-university"></i> Online Academy</span>
+                                    <span class="cert-duration"><i class="far fa-clock"></i> 200 horas</span>
+                                </div>
+                                <div class="cert-skills">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Redux</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                </div>
+                                <a href="#" class="cert-link">Ver credencial <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Habilidades</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-container">
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-html5 skill-icon"></i>
+                                    <span>HTML/CSS</span>
+                                </div>
+                                <span class="percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-js skill-icon"></i>
+                                    <span>JavaScript</span>
+                                </div>
+                                <span class="percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-react skill-icon"></i>
+                                    <span>React</span>
+                                </div>
+                                <span class="percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-container">
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-node-js skill-icon"></i>
+                                    <span>Node.js</span>
+                                </div>
+                                <span class="percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-database skill-icon"></i>
+                                    <span>MongoDB</span>
+                                </div>
+                                <span class="percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-git skill-icon"></i>
+                                    <span>Git</span>
+                                </div>
+                                <span class="percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-docker skill-icon"></i>
+                                    <span>Docker</span>
+                                </div>
+                                <span class="percentage">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="65%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-aws skill-icon"></i>
+                                    <span>AWS</span>
+                                </div>
+                                <span class="percentage">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-python skill-icon"></i>
+                                    <span>Python</span>
+                                </div>
+                                <span class="percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-angular skill-icon"></i>
+                                    <span>Angular</span>
+                                </div>
+                                <span class="percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-label">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-server skill-icon"></i>
+                                    <span>SQL</span>
+                                </div>
+                                <span class="percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80%" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="contact-form-container">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="cert1Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Full Stack Development Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 100%; height: 500px; background: #2d3436; display: flex; align-items: center; justify-content: center;">
+                        <h3>Certificate Preview</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cert2Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">JavaScript Advanced Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 100%; height: 500px; background: #2d3436; display: flex; align-items: center; justify-content: center;">
+                        <h3>Certificate Preview</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cert3Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">React Specialist Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 100%; height: 500px; background: #2d3436; display: flex; align-items: center; justify-content: center;">
+                        <h3>Certificate Preview</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4>Adrián Lodos Trinidad</h4>
+                    <p>Full Stack Developer Junior apasionado por crear soluciones web innovadoras y funcionales, con un fuerte compromiso por el aprendizaje continuo y la excelencia técnica.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/yourusername"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Sobre mí</a></li>
+                        <li><a href="#certificates"><i class="fas fa-chevron-right"></i> Certificados</a></li>
+                        <li><a href="#skills"><i class="fas fa-chevron-right"></i> Habilidades</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4>Contacto</h4>
+                    <ul class="list-unstyled contact-info">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>email@example.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+34 XXX XXX XXX</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>España</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="copyright">
+                © 2023 Adrián Lodos Trinidad. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="scripts.js" defer></script>
+</body>
+</html>

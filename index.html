@@ -1690,64 +1690,92 @@
 
     <!-- JavaScript -->
     <script>
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Remove loader after page load
-            setTimeout(function() {
+        // Función para generar imágenes válidas de placeholder
+        function generatePlaceholder(width, height) {
+            return `https://via.placeholder.com/${width}x${height}`;
+        }
+    
+        // Espera a que el DOM se cargue completamente
+        document.addEventListener('DOMContentLoaded', function () {
+            // Oculta el loader después de un tiempo
+            setTimeout(function () {
                 document.querySelector('.loader-container').style.opacity = '0';
-                setTimeout(function() {
+                setTimeout(function () {
                     document.querySelector('.loader-container').style.display = 'none';
                 }, 500);
             }, 1500);
-            
-            // Header scroll effect
+    
+            // Header efecto scroll
             const header = document.querySelector('header');
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 if (window.scrollY > 100) {
                     header.classList.add('scrolled');
                 } else {
                     header.classList.remove('scrolled');
                 }
             });
-            
-            // Mobile menu toggle
+    
+            // Toggle del menú en móvil
             const menuToggle = document.querySelector('.menu-toggle');
             const menuClose = document.querySelector('.menu-close');
             const menu = document.querySelector('.menu');
-            
-            menuToggle.addEventListener('click', function() {
+    
+            menuToggle.addEventListener('click', function () {
                 menu.classList.add('active');
             });
-            
-            menuClose.addEventListener('click', function() {
+    
+            menuClose.addEventListener('click', function () {
                 menu.classList.remove('active');
             });
-            
-            // Menu links smooth scroll
+    
+            // Smooth scroll para los enlaces del menú
             const menuLinks = document.querySelectorAll('.menu-item a, .footer-links a');
             menuLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     if (this.getAttribute('href').startsWith('#')) {
                         e.preventDefault();
-                        
+    
                         const targetId = this.getAttribute('href');
                         if (targetId === '#') return;
-                        
+    
                         const targetElement = document.querySelector(targetId);
                         const headerHeight = document.querySelector('header').offsetHeight;
-                        
+    
                         window.scrollTo({
                             top: targetElement.offsetTop - headerHeight,
                             behavior: 'smooth'
                         });
-                        
-                        // Close mobile menu if open
+    
+                        // Cierra el menú si está abierto
                         menu.classList.remove('active');
                     }
                 });
             });
-            
-            // Back to top button
+    
+            // Botón "volver arriba"
             const backToTop = document.querySelector('.back-to-top');
-            window.addEventListener('scroll', function() {
-                if
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+    
+            backToTop.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+    
+            // Reemplaza imágenes de prueba con placeholders válidos
+            const placeholderImages = document.querySelectorAll("img[data-placeholder]");
+            placeholderImages.forEach(img => {
+                const width = img.getAttribute("data-width") || 600;
+                const height = img.getAttribute("data-height") || 400;
+                img.src = generatePlaceholder(width, height);
+            });
+        });
+    </script>
+    

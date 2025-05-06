@@ -5,9 +5,10 @@
 .header {
     background: rgba(10, 10, 26, 0.85);
     color: var(--text);
-    padding: 1rem;
+    padding: 1rem 0; /* Solo padding vertical */
     position: fixed;
-    width: 100%;
+    width: 100vw; /* Asegurar que ocupe todo el ancho de la ventana */
+    left: 0; /* Alinear al borde izquierdo */
     top: 0;
     transition: var(--transition);
     backdrop-filter: blur(5px);
@@ -20,9 +21,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Ancho máximo */
-    margin: 0 auto; /* Centrar el contenedor */
+    max-width: 1200px; /* Limitar el ancho máximo */
+    margin: 0 auto; /* Centrar el contenido */
     padding: 0 1rem; /* Espaciado lateral */
+    box-sizing: border-box; /* Asegurar que el padding no afecte el ancho */
 }
 
 .logo-container {

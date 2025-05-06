@@ -4,14 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navList = document.querySelector('.nav-list');
     const dropdownMenu = document.getElementById('dropdown-menu');
 
-    if (hamburgerMenu && navList) {
+    if (hamburgerMenu) {
         hamburgerMenu.addEventListener('click', () => {
             hamburgerMenu.classList.toggle('active');
-            navList.classList.toggle('active');
+            if (navList) navList.classList.toggle('active');
+            if (dropdownMenu) dropdownMenu.classList.toggle('show');
         });
     }
-
-    hamburgerMenu.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('show');
-    });
 });

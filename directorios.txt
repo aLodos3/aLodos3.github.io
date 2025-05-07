@@ -1,0 +1,34 @@
+portfolio/
+│
+├── index.html                # Página principal
+├── projects.html            # Página para mostrar todos los proyectos
+│
+├── assets/                  # Recursos generales
+│   ├── images/              # Imágenes del sitio
+│   ├── fonts/               # Fuentes personalizadas
+│   └── favicon/             # Favicon y logos
+│
+├── css/
+│   ├── main.css             # Estilos generales
+│   ├── header.css           # Estilos del header
+│   ├── footer.css           # Estilos del footer
+│   ├── hero.css             # Estilos de la sección hero
+│   ├── about.css            # Estilos de la sección about
+│   ├── diplomas.css         # Estilos de la sección diplomas
+│   ├── projects.css         # Estilos de la sección proyectos
+│   ├── modal.css            # Estilos para modales
+│   ├── loader.css           # Estilos del loader
+│   ├── animations.css       # Animaciones y transiciones
+│   └── responsive.css       # Media queries para responsividad
+│
+├── js/
+│   ├── main.js              # JavaScript principal
+│   ├── background.js        # Animación de fondo (red neuronal/constelación)
+│   ├── navigation.js        # Lógica de navegación y resaltado de sección actual
+│   ├── slider.js            # Lógica del slider para diplomas
+│   ├── projects.js          # Lógica para manejo de proyectos y modales
+│   └── loader.js            # Lógica del loader inicial
+│
+└── data/                    # Datos para el sitio
+    ├── projects.json        # Información de proyectos
+    └── diplomas.json        # Información de diplomas

@@ -266,7 +266,7 @@
 /* Mejora del fondo y efectos de la sección diplomas */
 .diplomas-section {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 40%, rgba(0, 180, 216, 0.3) 60%); /* Fondo oscuro con alta transparencia */
-    padding: 60px 20px;
+    padding: 40px 20px; /* Reducir la altura */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -294,20 +294,22 @@
 }
 
 .carousel {
+    max-width: 600px; /* Further reduce the width of the carousel container */
+    margin: 0 auto 20px;
     position: relative;
     overflow: hidden;
-    max-width: 800px;
-    margin: 0 auto 20px;
     z-index: 1;
 }
 
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ensure the container spans the full width */
 }
 
 .carousel-image {
-    min-width: 100%;
+    flex: 0 0 100%; /* Each image takes up 100% of the container width */
+    max-width: 100%; /* Remove the 90% restriction */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);

@@ -1,13 +1,20 @@
 /* HERO SECTION STYLES */
 .hero {
-    min-height: 100vh;
+    min-height: 100vh; /* Asegurar que ocupe toda la altura de la ventana */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     padding: 120px 20px;
+    padding-bottom: 50px; /* Añadir espacio adicional al fondo */
     overflow: hidden;
     background: linear-gradient(135deg, rgba(74, 0, 224, 0.3) 0%, rgba(0, 180, 216, 0.3) 100%);
+    margin-top: 20px; /* Separar del header */
+    margin-bottom: 100px; /* Aumentar el margen inferior */
+}
+
+#hero {
+    margin-top: 20px; /* Más espacio entre el header y la imagen del hero */
 }
 
 .hero-container {
@@ -16,6 +23,10 @@
     align-items: center;
     text-align: center;
     gap: 20px;
+}
+
+.hero-photo {
+    margin-bottom: 20px; /* Más espacio entre la imagen del hero y el texto */
 }
 
 .hero-text {
@@ -318,4 +329,104 @@
 @keyframes fadeInOut {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
+}
+
+/* Estilo para el icono interactivo de scroll */
+.scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Espacio debajo de las habilidades */
+    animation: fadeInOut 2s infinite;
+}
+
+.scroll-indicator i {
+    font-size: 2rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.scroll-indicator i:hover {
+    transform: translateY(5px);
+}
+
+/* Estilo para la sección de habilidades destacadas */
+.hero-skills {
+    margin-top: 40px; /* Espacio adicional entre el texto del hero y las habilidades */
+    text-align: center;
+    background: transparent; /* Fondo transparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: none; /* Sin sombra */
+}
+
+.hero-skills h2 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.hero-skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-skills li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: #000000; /* Texto en negro */
+    background: #ffffff; /* Fondo blanco */
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px; /* Tamaño uniforme */
+    height: 50px; /* Tamaño uniforme */
+}
+
+.hero-skills li i {
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.hero-skills li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Reducir aún más la separación entre hero-quote y el scroll-indicator */
+.hero-quote {
+    margin-bottom: 5px; /* Reducir aún más el margen inferior */
+}
+
+/* Ajustar el gap en la sección Hero según el tamaño del dispositivo */
+@media (min-width: 1024px) {
+    .hero-container {
+        gap: 0; /* Sin gap en dispositivos grandes */
+    }
+}
+
+@media (max-width: 1023px) {
+    .hero-container {
+        gap: 20px; /* Mantener el gap en dispositivos pequeños */
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-quote {
+        display: none; /* Ocultar el hero-quote en pantallas grandes */
+    }
+}
+
+@media (min-width: 1024px) {
+    .scroll-indicator {
+        margin-top: 5px; /* Reducir aún más la distancia entre el scroll-indicator y el botón de descargar CV */
+    }
 }

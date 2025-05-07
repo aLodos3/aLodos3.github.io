@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
+    <title>ALTDev</title>
     <!-- Favicon -->
-    <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='logoGradient' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' stop-color='%234a00e0'/><stop offset='100%' stop-color='%238e2de2'/></linearGradient><filter id='glow' x='-20%' y='-20%' width='140%' height='140%'><feGaussianBlur stdDeviation='2' result='blur'/><feComposite in='SourceGraphic' in2='blur' operator='over'/></filter></defs><circle cx='32' cy='32' r='30' fill='rgba(22, 22, 45, 0.7)' stroke='url(%23logoGradient)' stroke-width='2'/><g filter='url(%23glow)'><path d='M20,20 L14,32 L20,44' fill='none' stroke='%2300b4d8' stroke-width='2.5' stroke-linecap='round'/><path d='M44,20 L50,32 L44,44' fill='none' stroke='%2300b4d8' stroke-width='2.5' stroke-linecap='round'/><circle cx='32' cy='32' r='6' fill='url(%23logoGradient)'/><path d='M32,26 L32,16' stroke='url(%23logoGradient)' stroke-width='2'/><path d='M32,38 L32,48' stroke='url(%23logoGradient)' stroke-width='2'/><path d='M26,32 L16,32' stroke='url(%23logoGradient)' stroke-width='2'/><path d='M38,32 L48,32' stroke='url(%23logoGradient)' stroke-width='2'/><circle cx='16' cy='16' r='2' fill='%2300b4d8'/><circle cx='48' cy='16' r='2' fill='%2300b4d8'/><circle cx='16' cy='48' r='2' fill='%2300b4d8'/><circle cx='48' cy='48' r='2' fill='%2300b4d8'/><path d='M17.5,17.5 L26,26' stroke='%2300b4d8' stroke-width='1.5'/><path d='M46.5,17.5 L38,26' stroke='%2300b4d8' stroke-width='1.5'/><path d='M17.5,46.5 L26,38' stroke='%2300b4d8' stroke-width='1.5'/><path d='M46.5,46.5 L38,38' stroke='%2300b4d8' stroke-width='1.5'/></g></svg>" type="image/svg+xml">
     
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/main.css">
@@ -29,6 +29,9 @@
         /* Espaciado entre el header y el contenido */
         body {
             margin-top: 80px; /* Ajusta el valor según el espacio deseado */
+        }
+        .highlight {
+            color: #00b4d8; /* Mismo azul claro que el título del header */
         }
     </style>
 </head>
@@ -94,7 +97,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <h1><span class="code-tag">&lt;</span>Dev<span class="highlight">Portfolio</span><span class="code-tag">/&gt;</span></h1>
+                        <h1><span class="code-tag">&lt;</span>ALT <span class="highlight">Dev</span><span class="code-tag">/&gt;</span></h1>
                     </a>
                 </div>
                 
@@ -121,7 +124,7 @@
                         <img src="img/yo.jpg" alt="Foto de Fullstack Developer" class="profile-photo">
                     </div>
                     <div class="hero-text">
-                        <h1>¡Hola! Soy Adrian Lodos Trinidad, <span class="highlight">Fullstack Developer</span></h1>
+                        <h1>¡Hola! Soy <span class="highlight">Adrian Lodos Trinidad</span>, Fullstack Developer</h1>
                         <p>Siempre disponible para colaborar en proyectos emocionantes. Me especializo en crear soluciones digitales eficientes y atractivas.</p>
                         <div class="hero-icons">
                             <div class="icon" title="HTML5">
@@ -145,6 +148,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="hero-quote">
+                    <blockquote>
+                        "El único modo de hacer un gran trabajo es amar lo que haces." - Steve Jobs
+                    </blockquote>
+                    <p>Inspirado por la innovación y la creatividad, siempre busco superar los límites de lo posible en el desarrollo web.</p>
+                </div>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                    <p>Scroll para más</p>
+                </div>
             </div>
         </section>
 
@@ -166,6 +179,7 @@
             <!-- Modal para ver todos los diplomas -->
             <div id="diplomas-modal" class="modal hidden">
                 <div class="modal-content">
+                    <button class="close-modal" style="position: absolute; top: 10px; right: 10px; background: none; color: red; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
                     <span class="close-modal">&times;</span>
                     <div class="modal-images">
                         <img src="img/certificado.jpg" alt="Diploma 1" class="modal-image">
@@ -215,12 +229,13 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary" id="view-all-projects">Ver Todos</button>
+                <button class="btn btn-primary" id="view-all-projects" onclick="location.href='projects.html'">Ver Todos</button>
             </div>
 
             <!-- Modal para ver proyecto completo -->
             <div id="project-modal" class="modal hidden">
                 <div class="modal-content">
+                    <button class="close-modal" style="position: absolute; top: 10px; right: 10px; background: none; color: red; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
                     <span class="close-modal">&times;</span>
                     <div id="project-modal-content">
                         <!-- Contenido dinámico del proyecto -->
@@ -337,5 +352,8 @@
     <!-- Scripts JS -->
     <script src="js/loader.js"></script>
     <script src="js/background.js"></script>
+    <script src="js/diplomas.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/navigation.js"></script>
 </body>
 </html>

@@ -51,6 +51,14 @@ window.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('show');
     });
 
+    // Ensure all close-modal buttons close the modal
+    const closeButtons = document.querySelectorAll('.close-modal');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+    });
+
     // Asegurarse de que el modal se cierre al hacer clic fuera del contenido
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
@@ -62,5 +70,27 @@ window.addEventListener('DOMContentLoaded', () => {
     viewAllButton.addEventListener('click', () => {
         console.log('Botón Ver Todos clicado');
         window.location.href = 'projects.html';
+    });
+
+    // Add event listener for the 'Volver al Inicio' button
+    const returnHomeButton = document.querySelector('.return-home');
+    if (returnHomeButton) {
+        returnHomeButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    // Add hover effects and animations to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
+            card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.3)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+        });
     });
 });

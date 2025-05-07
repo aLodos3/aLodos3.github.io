@@ -11,23 +11,17 @@ window.addEventListener('DOMContentLoaded', () => {
     let intervalId;
 
     // Configurar el carrusel para cambiar la imagen cada 3 segundos
-    const startSlider = () => {
-        intervalId = setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length;
-            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }, 3000);
-    };
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        const offset = -currentIndex * images[0].clientWidth;
+        carouselImages.style.transform = `translateX(${offset}px)`;
+    }
 
-    const stopSlider = () => {
-        clearInterval(intervalId);
-    };
-
-    // Iniciar el slider
-    startSlider();
+    setInterval(showNextImage, 3000); // Cambiar imagen cada 3 segundos
 
     // Pausar el slider al pasar el mouse sobre el carrusel
-    carouselImages.addEventListener('mouseover', stopSlider);
-    carouselImages.addEventListener('mouseout', startSlider);
+    carouselImages.addEventListener('mouseover', () => clearInterval(intervalId));
+    carouselImages.addEventListener('mouseout', () => intervalId = setInterval(showNextImage, 3000));
 
     // Abrir modal
     viewAllButton.addEventListener('click', () => {
@@ -54,6 +48,14 @@ window.addEventListener('DOMContentLoaded', () => {
     // Cerrar modal
     closeModal.addEventListener('click', () => {
         modal.classList.remove('show');
+    });
+
+    // Ensure all close-modal buttons close the modal
+    const closeButtons = document.querySelectorAll('.close-modal');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
     });
 
     // Asegurarse de que el modal se cierre al hacer clic fuera del contenido

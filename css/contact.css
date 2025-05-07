@@ -12,9 +12,8 @@ CONTACT SECTION STYLES
 }
 
 .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 50px;
     max-width: 1200px;
     margin: 0 auto;

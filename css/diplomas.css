@@ -265,7 +265,7 @@
 
 /* Mejora del fondo y efectos de la sección diplomas */
 .diplomas-section {
-    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con alta transparencia */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 40%, rgba(0, 180, 216, 0.3) 60%); /* Fondo oscuro con alta transparencia */
     padding: 60px 20px;
     text-align: center;
     position: relative;

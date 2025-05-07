@@ -3,71 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todos los Proyectos</title>
+  <title>Proyectos</title>
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/projects.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <script defer src="js/modal.js"></script>
 </head>
 <body>
-  <header class="project-header">
-    <div class="container">
-      <h1>Todos los Proyectos</h1>
-      <a href="index.html" class="btn">Volver al Inicio</a>
-    </div>
+  <header>
+    <h1>Todos los Proyectos</h1>
   </header>
-
-  <section id="all-projects" class="section">
-    <div class="container">
-      <div class="project-grid">
-        <div class="project-card" onclick="openModal(1)">
-          <img src="img/proyecto1.jpg" alt="Proyecto 1" />
-          <h3>Gestor de Tareas</h3>
+  <main class="projects-section">
+    <div class="container projects-container">
+      <div class="projects-cards">
+        <div class="project-card">
+          <img src="img/certificado.jpg" alt="Proyecto 1" class="project-image" />
+          <div class="project-description">
+            <h3>Proyecto 1</h3>
+            <p>Descripción breve del proyecto 1.</p>
+            <button class="btn btn-primary view-project" data-project="1">Ver Proyecto</button>
+          </div>
         </div>
-        <div class="project-card" onclick="openModal(2)">
-          <img src="img/proyecto2.jpg" alt="Proyecto 2" />
-          <h3>Aplicación de Clima</h3>
+        <div class="project-card">
+          <img src="img/certificado.jpg" alt="Proyecto 2" class="project-image" />
+          <div class="project-description">
+            <h3>Proyecto 2</h3>
+            <p>Descripción breve del proyecto 2.</p>
+            <button class="btn btn-primary view-project" data-project="2">Ver Proyecto</button>
+          </div>
         </div>
-        <div class="project-card" onclick="openModal(3)">
-          <img src="img/proyecto3.jpg" alt="Proyecto 3" />
-          <h3>Panel de Administración</h3>
+        <div class="project-card">
+          <img src="img/certificado.jpg" alt="Proyecto 3" class="project-image" />
+          <div class="project-description">
+            <h3>Proyecto 3</h3>
+            <p>Descripción breve del proyecto 3.</p>
+            <button class="btn btn-primary view-project" data-project="3">Ver Proyecto</button>
+          </div>
         </div>
-        <div class="project-card" onclick="openModal(4)">
-          <img src="img/proyecto4.jpg" alt="Proyecto 4" />
-          <h3>Portafolio Interactivo</h3>
-        </div>
-        <div class="project-card" onclick="openModal(5)">
-          <img src="img/proyecto5.jpg" alt="Proyecto 5" />
-          <h3>Blog Personal</h3>
-        </div>
-        <div class="project-card" onclick="openModal(6)">
-          <img src="img/proyecto6.jpg" alt="Proyecto 6" />
-          <h3>Gestor de Notas</h3>
-        </div>
-        <div class="project-card" onclick="openModal(7)">
-          <img src="img/proyecto7.jpg" alt="Proyecto 7" />
-          <h3>Landing Page</h3>
-        </div>
-        <div class="project-card" onclick="openModal(8)">
-          <img src="img/proyecto8.jpg" alt="Proyecto 8" />
-          <h3>Sistema de Reservas</h3>
+        <div class="project-card">
+          <img src="img/certificado.jpg" alt="Proyecto 4" class="project-image" />
+          <div class="project-description">
+            <h3>Proyecto 4</h3>
+            <p>Descripción breve del proyecto 4.</p>
+            <button class="btn btn-primary view-project" data-project="4">Ver Proyecto</button>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- MODAL PROJECT DETAILS -->
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-body"></div>
+    <!-- Modal para ver proyecto completo -->
+    <div id="project-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="project-modal-content">
+          <!-- Contenido dinámico del proyecto -->
+        </div>
+      </div>
     </div>
-  </div>
-
+  </main>
   <footer class="footer">
     <div class="container">
       <p>&copy; <span id="year"></span> Mi Portfolio. Todos los derechos reservados.</p>
     </div>
-    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </footer>
+  <script src="js/projects.js"></script>
 </body>
 </html>

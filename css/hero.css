@@ -117,10 +117,12 @@
     50% { opacity: 0; }
 }
 
+/* Centrar el botón de descargar CV */
 .hero-cta {
     display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Incrementar el margen inferior */
 }
 
 .btn-outline {

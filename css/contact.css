@@ -4,262 +4,207 @@ CONTACT SECTION STYLES
 ==========================
 */
 
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 50px;
-  margin-top: 20px;
+.contact-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 40%, rgba(0, 180, 216, 0.3) 60%);
+    color: #ffffff;
+    text-align: center;
 }
 
-/* Contact Info Cards */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Añadir diseño para las pequeñas cards de contacto y encerrar el formulario en una card */
 .contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
 }
 
 .contact-card {
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contact-card:hover .contact-icon {
-  background: var(--gradient);
-  transform: scale(1.1);
-}
-
-.contact-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(62, 152, 199, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  transition: var(--transition);
-}
-
-.contact-icon i {
-  font-size: 24px;
-  color: var(--accent);
+.contact-card .contact-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+    background: rgba(0, 180, 216, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00b4d8;
+    font-size: 1.5rem;
 }
 
 .contact-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: var(--text);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #ffffff;
 }
 
-.contact-card p, .contact-card a {
-  color: rgba(248, 249, 250, 0.8);
-  font-size: 1rem;
-  transition: var(--transition);
-}
-
-.contact-card a:hover {
-  color: var(--accent);
+.contact-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Social Links */
 .contact-social {
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 25px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+    text-align: center;
+    margin-top: 30px;
 }
 
 .contact-social h3 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 .social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .social-link {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(22, 22, 45, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  font-size: 20px;
-  transition: var(--transition);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .social-link:hover {
-  transform: translateY(-5px);
-  background: var(--gradient);
-  color: white;
+    transform: translateY(-5px);
+    background: #00b4d8;
+    color: #ffffff;
 }
 
 /* Contact Form */
 .contact-form-container {
-  background: var(--card-bg);
-  border-radius: 10px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
+/* Mejora visual del formulario de contacto */
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-group label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(248, 249, 250, 0.9);
-}
-
-.input-group {
-  position: relative;
-}
-
-.input-group-icon {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgba(248, 249, 250, 0.5);
-  font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 12px 15px 12px 45px;
-  background: rgba(22, 22, 45, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: var(--text);
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  transition: var(--transition);
-}
-
-.contact-form textarea {
-  min-height: 150px;
-  resize: vertical;
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(22, 22, 45, 0.8);
-  box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+    border-color: #00b4d8;
+    box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
 }
 
-/* Checkbox styling */
-.form-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-direction: row;
+.contact-form button[type="submit"] {
+    background: linear-gradient(135deg, #00b4d8, #0077a3);
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.form-checkbox input[type="checkbox"] {
-  width: auto;
-  margin-right: 10px;
-  cursor: pointer;
-  accent-color: var(--accent);
-  width: 18px;
-  height: 18px;
+.contact-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0077a3, #005f7a);
+    transform: scale(1.05);
 }
 
-.form-checkbox label {
-  cursor: pointer;
-  font-size: 0.9rem;
+.contact-form .form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #ffffff;
 }
 
-.form-checkbox a {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-/* Submit button */
-.btn-submit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.btn-submit:hover .btn-icon {
-  transform: translateX(5px);
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Form status messages */
 .form-status {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .alert {
-  padding: 12px 15px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  margin-top: 10px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
 .alert-success {
-  background-color: rgba(72, 187, 120, 0.2);
-  color: #48bb78;
-  border: 1px solid rgba(72, 187, 120, 0.3);
+    background-color: rgba(72, 187, 120, 0.2);
+    color: #48bb78;
+    border: 1px solid rgba(72, 187, 120, 0.3);
 }
 
 .alert-error {
-  background-color: rgba(245, 101, 101, 0.2);
-  color: #f56565;
-  border: 1px solid rgba(245, 101, 101, 0.3);
+    background-color: rgba(245, 101, 101, 0.2);
+    color: #f56565;
+    border: 1px solid rgba(245, 101, 101, 0.3);
 }
 
 .alert-info {
-  background-color: rgba(66, 153, 225, 0.2);
-  color: #4299e1;
-  border: 1px solid rgba(66, 153, 225, 0.3);
+    background-color: rgba(66, 153, 225, 0.2);
+    color: #4299e1;
+    border: 1px solid rgba(66, 153, 225, 0.3);
 }

@@ -28,21 +28,14 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log('Botón "Ver Todos" clicado'); // Log en consola
         modal.classList.add('show');
 
-        // Generar dinámicamente 6 diplomas en el modal
-        modalImagesContainer.innerHTML = '';
-        for (let i = 0; i < 6; i++) {
-            const img = document.createElement('img');
-            img.src = 'img/certificado.jpg';
-            img.alt = `Diploma ${i + 1}`;
-            img.classList.add('modal-image');
-            modalImagesContainer.appendChild(img);
-
-            // Ampliar imagen al hacer clic
-            img.addEventListener('click', () => {
-                const newWindow = window.open();
-                newWindow.document.write(`<img src="${img.src}" style="width: 100%; height: auto;">`);
-            });
-        }
+// Añadir funcionalidad de ampliación a las imágenes ya existentes en el HTML
+const modalImages = document.querySelectorAll('.modal-image');
+modalImages.forEach(img => {
+    img.addEventListener('click', () => {
+        const newWindow = window.open();
+        newWindow.document.write(`<img src="${img.src}" style="width: 100%; height: auto;">`);
+    });
+});
     });
 
     // Cerrar modal
@@ -64,4 +57,5 @@ window.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('show');
         }
     });
+
 });
